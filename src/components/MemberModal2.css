@@ -1,0 +1,90 @@
+
+.cubemod{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cubemodal {
+    width: 250px;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  
+  .cube-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  
+  .cubemodal.flipped .cube-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .cube-face {
+    border-radius: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    background-color: #333;
+    border: 1px solid #666;
+}
+
+.cube-front {
+    transform: translateZ(125px);
+  }
+  .contentFace{
+    border-radius: 20px;
+    font-size: 1.4rem;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/profilepic.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px black;
+}
+.contentBack{
+    border-radius: 20px;
+    width: 100%;
+    font-size: 1rem;
+    padding: 5px;
+    height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      text-shadow: 0px 0px 10px black;
+      background-color: rgba(8,61,119);
+  }
+  
+  .socialsback{
+    width: 100%;
+    font-size: 2rem;
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .cube-back {
+    transform: rotateY(180deg) translateZ(125px);
+  }
+  .cube-left,.cube-right {
+    border-radius: 20px;
+    background-color: red;
+    transform: rotateY(-90deg) translateZ(120px);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  

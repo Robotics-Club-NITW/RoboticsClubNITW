@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Header.css'
 // import logo from '../assets/favicon.ico'
 import { NavLink } from 'react-router-dom'
@@ -18,6 +18,19 @@ const Header = () => {
   }
   window.addEventListener("scroll", changeColor)
 
+  const onScroll = () => {
+    // let pixelsFromTop = window.scrollY;
+    // let documentHeight = document.body.clientHeight;
+    // let windowHeight = window.innerHeight;
+    // let difference = documentHeight - windowHeight;
+    // let percentage = (100 * pixelsFromTop) / difference;
+    // document.getElementById("bar").style.width = `${percentage}%`;
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  });
+
   const handleShow = (e) => { setShow(!show) }
   return (
     <>
@@ -26,6 +39,7 @@ const Header = () => {
         <div className={`flexCenter ${show ? `h-menu hactive` : `h-menu`}`}>
           <li><NavLink onClick={handleShow} className='navlink' to='/' >Home</NavLink></li>
           <li><NavLink onClick={handleShow} className='navlink' to='/members' >Members</NavLink></li>
+          <li><NavLink onClick={handleShow} className='navlink' to='/competitions' >Competitions</NavLink></li>
           <li><NavLink onClick={handleShow} className='navlink' to='/events' >Events</NavLink></li>
           <li><NavLink onClick={handleShow} className='navlink' to='/projects' >Projects</NavLink></li>
           <li><NavLink onClick={handleShow} className='navlink' to='/alumni' >Alumni</NavLink></li>
@@ -35,6 +49,7 @@ const Header = () => {
           {show ? <BiMenuAltRight size={30} /> : <FaBars size={20} style={{ color: 'white' }} />}
         </div>
       </section>
+      {/* <div className="progressWrap" id="bar"></div> */}
     </>
   )
 }

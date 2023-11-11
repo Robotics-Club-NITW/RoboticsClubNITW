@@ -63,8 +63,19 @@
     display: none;
     padding: 1rem;
 }
+.progressWrap{
+    z-index: 3;
+    top: 90px;
+    left: 0;
+    position: fixed;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.893);
+    width: 0%;
+    box-shadow: 0px 0px 5px 2px white;
+    transition: 0.4s;
+}
 
-@media screen and (max-width:910px) {
+@media screen and (max-width:1007px) {
      .h-icon {
         display: initial;
     }

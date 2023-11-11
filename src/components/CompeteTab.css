@@ -1,0 +1,47 @@
+.compcont{
+    background: #000;
+    color: white;
+}
+.comptabs{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.comptab{
+
+    margin: 15px;
+    max-width: 300px;
+    max-height: 300px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    position: relative;
+    transition: 0.3s;
+}
+.comptab p{
+    z-index: 2;
+}
+.compimg{
+    border-radius:   20px;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbibab7EdP2fmKweDXfC_SjeVo6uJNLM_A1w&usqp=CAU');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+.comptab:hover{
+    scale: 1.05;
+}
+.comptab:hover .comptab p{
+    font-size: 1.7rem;
+}

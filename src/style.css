@@ -203,6 +203,7 @@ a {
   z-index: 0;
 }
 
+
 /* media queries */
 @media (max-width: 1536px) {
   .innerWidth {

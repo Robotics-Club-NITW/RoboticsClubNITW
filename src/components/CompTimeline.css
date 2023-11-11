@@ -1,0 +1,11 @@
+.comptimeline{
+    width: 100%;
+    background-color: black;
+}
+.comptime{
+    background: black;
+    padding: 20px;
+}
+.vertical-timeline-element-date{
+    color: white;
+}
