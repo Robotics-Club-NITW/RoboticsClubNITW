@@ -4,14 +4,21 @@ import './style.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { CustomProvider } from 'rsuite';
+import { AppProvider } from './context/AppContext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-  </BrowserRouter>
+  <CustomProvider theme='light'>
+    <BrowserRouter>
+    <AppProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </AppProvider>
+    </BrowserRouter>
+  </CustomProvider>
 );
 
 reportWebVitals();

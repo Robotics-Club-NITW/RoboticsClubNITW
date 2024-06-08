@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Header.css'
 // import logo from '../assets/favicon.ico'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { BiMenuAltRight } from 'react-icons/bi'
 import { FaBars } from 'react-icons/fa'
 
@@ -35,7 +35,10 @@ const Header = () => {
   return (
     <>
       <section className={`h-wrapper ${color ? 'header-bg' : ''}`}>
-        <img src={'https://roboticsclubnitw.github.io/images/Robotics%20Club,%20NITW.png'} style={{height:'100%'}} alt="Logo Here" />
+        <div className='h-wrap-cont'>
+        <img className='h-wrap-img' src={'https://roboticsclubnitw.github.io/images/Robotics%20Club,%20NITW.png'} style={{height:'100%'}} alt="Logo Here" />
+        {useLocation().pathname==='/'?<></>:<><div className="hr-title"><h1 style={{fontSize:'1rem'}}>Robotics Club</h1></div></>}
+        </div>
         <div className={`flexCenter ${show ? `h-menu hactive` : `h-menu`}`}>
           <li><NavLink onClick={handleShow} className='navlink' to='/' >Home</NavLink></li>
           <li><NavLink onClick={handleShow} className='navlink' to='/members' >Members</NavLink></li>

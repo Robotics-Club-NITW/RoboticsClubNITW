@@ -9,7 +9,7 @@ const HeroImg = (props) => {
     <div className="hero-image">
         <Particlesbg/>
         <div className="hero-content">
-          <h1>{props.title}</h1>
+          <h1 style={props.small && {fontSize:'2.5rem'}}>{props.title}</h1>
           <p>{props.desc}</p>
         </div>
       </div>

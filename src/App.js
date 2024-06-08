@@ -11,6 +11,8 @@ import Competitions from './routes/Competitions'
 import Robocon from './components/Robocon'
 import Eyantra from './components/Eyantra'
 import OtherComp from './components/OtherComp'
+import StartLoader from './components/StartLoader'
+import EventPage from './components/EventPage'
 
 
 // import { Route, Router } from 'react-router-dom'
@@ -18,11 +20,13 @@ import OtherComp from './components/OtherComp'
 const App = () => {
   return (
     <>
+    <StartLoader/>
     <Header/>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/members' element={<Members/>}/>
       <Route path='/events' element={<Events/>}/>
+      <Route path='/events/:eventid' element={<EventPage/>}/>
       <Route path='/projects' element={<Projects/>}/>
       <Route path='/alumni' element={<Alumni/>}/>
       <Route path='/competitions' element={<Competitions/>}>

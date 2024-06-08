@@ -1,0 +1,31 @@
+.eventpagecont{
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: center; */
+}
+.eventpageimgdiv{
+    width: 20%;
+    border-radius: 10px;
+    margin: 30px;
+}
+.eventpageimgdiv img{
+    width: 100%;
+}
+.eventpagedesc{
+    margin: 30px;
+    width: 70%;
+}
+@media screen and (max-width:910px) {
+    .eventpageimgdiv{
+        width: 90%;
+    }
+    .eventpagedesc{
+        width: 90%;
+        margin: 10px;
+    }
+}

@@ -1,34 +1,34 @@
-#model3{
+#model3 {
     margin: 10px;
     background-color: black;
     color: white;
     transition: 0.4s;
 }
-#model3 .member
-{
+
+#model3 .member {
     /* margin: 20px 15px; */
     border-radius: 15px;
     width: 350px;
     padding: 40px 0;
     height: max-content;
-    background-color: #eeeeee;
+    min-height: 350px;
     background-color: #fff;
     /* background-image: url('../assets/profilepic.jpg'); */
     background-size: cover;
     transition: all 1s;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     position: relative;
     cursor: pointer;
     z-index: 3;
     text-align: center;
-    color: #4066ff;
+    /* color: #4066ff; */
+    color: black;
 }
 
-#model3 .member::after
-{
+/* #model3 .member::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,12 +36,10 @@
     width: 0;
     height: 20px;
     transition: all 1s;
-    background: #4066ff;
-    /* background: blue; */
-}
+    background: #000;
+} */
 
-#model3 .member::before
-{
+/* #model3 .member::before {
     position: absolute;
     top: 0;
     right: 0;
@@ -49,12 +47,10 @@
     width: 0;
     height: 20px;
     transition: all 1s;
-    background: #4066ff;
-    /* background: blue; */
-}
+    background: #000;
+} */
 
-#model3 img
-{
+#model3 img {
     border-radius: 50%;
     border: 1px solid blue;
     transition: all 1s;
@@ -65,29 +61,58 @@
     color: #4066ff;
     text-align: center;
 } */
+#model3 .description h1 {
+    /* text-shadow: black 1px 1px 2px; */
+    padding: 0;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: -1px 1px 0 #000,
+    1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
 
 
-#model3 .description h2
-{
+#model3 .description h2 {
+    /* text-shadow: black 1px 1px 2px; */
     font-family: 'Poppins', sans-serif;
     text-align: center;
     color: #F21B3F;
-    font-weight: 600;
-    font-size: 18px;
+    /* color: black; */
+    color: white;
+    font-weight: 100;
+    /* font-weight: 600; */
+    font-size: 1rem;
 }
 
-#model3 .description p
-{
+#model3 .description p {
     /* color: #4066ff; */
     text-align: justify;
     padding: 0 15px;
 }
 
-#model3 .social-media
-{
+#model3 .description {
+    padding: 10px;
+    /* border-radius: 10px; */
+    width: 100%;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    #model3 .description {
+        -webkit-backdrop-filter: blur(1px);
+        backdrop-filter: blur(1px);
+        background-image: linear-gradient(to top,rgba(0,0,0,0.7),rgba(0,0,0,0.2));
+        /* background-color: rgba(255, 255, 255, 0.5); */
+    }
+}
+
+#model3 .social-media {
     position: absolute;
     /* background-color: blue; */
-    background-color: #4066ff;
+    /* background-color: #4066ff; */
+    background-color: rgba(0,0,0,0.3);
     bottom: 0;
     left: 0;
     width: 100%;
@@ -102,38 +127,47 @@
     z-index: -1;
 }
 
-#model3 .description .social-media svg
-{
+#model3 .description .social-media svg {
     font-size: 0px;
-    /* height: 0; */
+    height: 0;
     transition: all 0.5s ease-in;
 }
 
 
-#model3 .member:hover .description .social-media svg{
+#model3 .member:hover .description .social-media svg {
     /* height: initial; */
-    /* height: 100%; */
-    font-size: 25px;
+    height: 100% !important;
+    /* font-size: 0px; */
 }
-#model3 .member:hover .social-media
-{
+
+#model3 .member:hover .social-media {
     display: flex;
     align-items: center;
-    height: 10%;
+    height: 40px;
     opacity: 1;
     padding: 2px;
 }
 
-#model3 .member:hover{
-    color: white !important;
-    background-color: rgba(8,61,119,0.2);
+#model3 .member:hover {
+    /* color: #4066ff !important; */
+    color: #000 !important;
+    background-color: rgba(8, 61, 119, 0.2);
     transform: scale(1.01);
 }
+#model3 .member:hover .description h1{
+    /* color: #8da3ff; */
+    text-shadow: -1px 1px 0 #fff,
+        1px 1px 0 #fff,
+            1px -1px 0 #fff,
+            -1px -1px 0 #fff;
+            color: black;
+            font-weight: 800;
+}
 
-#model3 .member:hover img
-{
+#model3 .member:hover img {
     transform: scale(1.1);
-    border: 2px solid #4066ff;
+    /* border: 2px solid #4066ff; */
+    border: 2px solid #000;
 }
 
 /* #model3 .description .social-media svg:hover
@@ -142,14 +176,12 @@
     color: #F21B3F;
 } */
 
-#model3 .member:hover::before
-{
+#model3 .member:hover::before {
     border-top-right-radius: 15px;
     width: 50%;
 }
 
-#model3 .member:hover::after
-{
+#model3 .member:hover::after {
     border-top-left-radius: 15px;
     width: 50%;
 }
