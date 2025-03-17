@@ -3,7 +3,7 @@ import './EventCard.css'
 
 const EventCard = (props) => {
   return (
-    <div className='ecardcont' style={{background:`url(${props.details.img})`,backgroundSize:'cover'}}>
+    <div className='ecardcont' style={{backgroundImage:`url(${props.details.img})`,backgroundSize:'cover'}}>
         <div className="ecardtext">
             {props.details.name}
         </div>
