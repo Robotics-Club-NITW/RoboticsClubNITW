@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import './EventPage.css'
 import { AppContext } from '../context/AppContext'
 import { RingLoader } from 'react-spinners'
+import Countdown from 'react-countdown'
 
 const EventPage = () => {
     const { eventslist, eventsLoad } = useContext(AppContext);
@@ -12,7 +13,12 @@ const EventPage = () => {
     const currEventDetails = eventslist.filter((e) => {
         return e.url === currevent;
     })[0];
-    console.log(currEventDetails);
+
+    const formatDeadline = (deadline) => {
+        const [date, time] = deadline.split(' ');
+        const [day, month, year] = date.split('/');
+        return new Date(`${year}-${month}-${day}T${time}:00`);
+    };
 
     return (
         <>{eventsLoad ? <>
@@ -20,8 +26,13 @@ const EventPage = () => {
             <div className="eventpagecont">.
                 <div className="eventpageimgdiv">
                     <img src={currEventDetails.img} alt="" />
-                    {(currEventDetails?.link && currEventDetails?.link!=="" ) && <div style={{ width: "100%", display: "flex", "justifyContent": "center", padding: "15px" }}>
-                        <a href={currEventDetails.link} target='_blank' className='btn' style={{ fontSize: "1.4rem", padding: "10px 20px" }}>Apply</a>
+                    {(currEventDetails?.deadline !== "" && !isNaN(formatDeadline(currEventDetails.deadline)) && formatDeadline(currEventDetails.deadline) > new Date()) && <div>
+                        {(currEventDetails?.link && currEventDetails?.link !== "") && <div style={{ width: "100%", display: "flex", "justifyContent": "center", padding: "15px" }}>
+                            <a href={currEventDetails.link} target='_blank' rel='noreferrer' className='btn' style={{ fontSize: "1.4rem", padding: "10px 20px" }}>Apply</a>
+                        </div>}
+                        <div style={{ width: "100%", display: "flex", "justifyContent": "center", padding: "15px" }}>
+                            Apply in&nbsp;<Countdown date={formatDeadline(currEventDetails.deadline)} daysInHours />
+                        </div>
                     </div>}
                 </div>
                 <div className="eventpagedesc">
